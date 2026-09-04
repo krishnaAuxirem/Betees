@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 0 0% 9.4%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9.4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9.4%;
+    --primary: 0 0% 9.4%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 345 62% 30%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 30 15% 96%;
+    --muted-foreground: 0 0% 32%;
+    --accent: 0 36% 64%;
+    --accent-foreground: 0 0% 9.4%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 30 8% 89%;
+    --input: 30 8% 89%;
+    --ring: 0 0% 9.4%;
+    --radius: 0.25rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-warm-white text-charcoal font-sans antialiased;
+    overscroll-behavior-y: none;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-surface-high;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-outline-color rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-on-surface-variant;
+  }
+}
+
+@layer components {
+  /* Typography */
+  .font-display {
+    font-family: "Playfair Display", Georgia, serif;
+  }
+
+  /* Editorial heading styles */
+  .heading-hero {
+    @apply font-display text-4xl md:text-5xl lg:text-display-hero leading-tight tracking-tight;
+  }
+
+  .heading-xl {
+    @apply font-display text-3xl md:text-4xl lg:text-headline-xl leading-tight tracking-tight;
+  }
+
+  .heading-lg {
+    @apply font-display text-2xl md:text-3xl lg:text-headline-lg leading-snug;
+  }
+
+  .heading-md {
+    @apply font-display text-xl md:text-2xl font-medium leading-snug;
+  }
+
+  .label-caps {
+    @apply text-label-caps uppercase tracking-widest font-semibold;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply bg-charcoal text-warm-white px-6 py-3 font-sans text-xs font-semibold uppercase tracking-widest hover:bg-burgundy transition-all duration-300 inline-flex items-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply bg-burgundy text-warm-white px-6 py-3 font-sans text-xs font-semibold uppercase tracking-widest hover:bg-charcoal transition-all duration-300 inline-flex items-center gap-2;
+  }
+
+  .btn-outline {
+    @apply border border-charcoal text-charcoal px-6 py-3 font-sans text-xs font-semibold uppercase tracking-widest hover:bg-charcoal hover:text-warm-white transition-all duration-300 inline-flex items-center gap-2;
+  }
+
+  .btn-ghost {
+    @apply text-charcoal px-4 py-2 font-sans text-xs font-semibold uppercase tracking-widest hover:text-burgundy transition-colors inline-flex items-center gap-2;
+  }
+
+  /* Cards */
+  .product-card {
+    @apply bg-white shadow-editorial hover:shadow-card-hover transition-all duration-300 flex flex-col overflow-hidden;
+  }
+
+  /* AI Badge */
+  .ai-badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 bg-white/90 backdrop-blur-sm text-burgundy font-sans text-[10px] font-bold uppercase tracking-wider;
+  }
+
+  /* Dashboard sidebar */
+  .sidebar-item {
+    @apply flex items-center gap-3 px-4 py-2.5 text-sm font-medium transition-all duration-200 rounded-none cursor-pointer;
+  }
+
+  .sidebar-item-active {
+    @apply bg-burgundy text-white;
+  }
+
+  .sidebar-item-inactive {
+    @apply text-gray-400 hover:text-white hover:bg-white/10;
+  }
+
+  /* Stat card */
+  .stat-card {
+    @apply bg-white p-5 shadow-editorial;
+  }
+
+  /* Section container */
+  .section-container {
+    @apply max-w-[1600px] mx-auto px-4 md:px-6 lg:px-8;
+  }
+
+  /* Hero overlay gradient */
+  .hero-overlay {
+    background: linear-gradient(to bottom, rgba(24,24,27,0.3) 0%, rgba(24,24,27,0.1) 50%, rgba(24,24,27,0.6) 100%);
+  }
+
+  /* Loading skeleton */
+  .skeleton {
+    @apply animate-pulse bg-surface-high;
+  }
+
+  /* Notification dot */
+  .notification-dot {
+    @apply absolute -top-1 -right-1 w-4 h-4 rounded-full flex items-center justify-center text-[9px] font-bold;
+  }
+
+  /* Badge styles */
+  .badge-ai {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider;
+  }
+
+  /* Form elements */
+  .input-editorial {
+    @apply w-full bg-surface-low border border-outline-variant text-charcoal placeholder:text-on-surface-variant px-3 py-2.5 text-sm focus:outline-none focus:border-charcoal transition-colors;
+  }
+
+  /* Price tag */
+  .price-inr {
+    @apply font-display font-semibold text-charcoal;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Editorial underline */
+  .editorial-underline {
+    @apply relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-burgundy after:transition-all after:duration-300 after:w-0 hover:after:w-full;
+  }
+
+  /* Shimmer loading */
+  .shimmer-bg {
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.5) 50%, transparent 100%);
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+  }
+}
+
+/* Page transition */
+.page-enter {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Hero slider */
+.hero-slide {
+  transition: opacity 0.8s ease-in-out, transform 1.2s ease;
+}
+
+/* Typewriter cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Custom checkbox */
+input[type="checkbox"].betees-checkbox {
+  @apply appearance-none w-4 h-4 border border-outline-color checked:bg-burgundy checked:border-burgundy;
+}
+
+/* Floating back to top button */
+.back-to-top {
+  @apply fixed bottom-8 right-8 w-12 h-12 bg-charcoal text-warm-white flex items-center justify-center shadow-lg z-50 hover:bg-burgundy transition-colors duration-200 cursor-pointer;
+}
