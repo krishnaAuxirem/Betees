@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { TrendingUp, Sparkles, ArrowRight, ChevronRight } from "lucide-react";
 import { PRODUCTS, formatINR, CATEGORIES, DESIGNERS } from "@/constants/data";
 import { ProductCard } from "@/components/features/ProductCard";
-import hero2 from "@/assets/hero-2.jpg";
+import hero2 from "@/assets/ABC.jpg";
 
 export const Discover = () => (
   <div className="animate-fade-in">

@@ -83,10 +83,10 @@ export const VirtualTryOn = () => {
             {/* Stats */}
             <div className="grid grid-cols-2 gap-3">
               {[
-                { label: "Fit Accuracy", value: "98.4%", icon: "📐" },
-                { label: "Drape Vectors", value: "2,400+", icon: "🧵" },
-                { label: "Time to Sim", value: "2.5 sec", icon: "⚡" },
-                { label: "Body Points", value: "124", icon: "🔬" },
+                { label: "Fit Accuracy", value: "98.4%", icon: "" },
+                { label: "Drape Vectors", value: "2,400+", icon: "" },
+                { label: "Time to Sim", value: "2.5 sec", icon: "" },
+                { label: "Body Points", value: "124", icon: "" },
               ].map((s) => (
                 <div key={s.label} className="bg-surface-low p-3 text-center">
                   <div className="text-xl mb-1">{s.icon}</div>

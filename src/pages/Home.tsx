@@ -121,10 +121,10 @@ export const Home = () => {
               <p className="text-gray-400 leading-relaxed">Aura AI analyzes your body measurements, color palette, calendar events, and personal taste graph to synthesize hyper-personalized outfits — instantly.</p>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { icon: "🎯", label: "Taste Alignment", value: "99.1%" },
-                  { icon: "📐", label: "Fit Precision", value: "98.4%" },
-                  { icon: "⚡", label: "Style Synthesis", value: "32 sec" },
-                  { icon: "🌐", label: "Occasion Modes", value: "50+" },
+                  { icon: "", label: "Taste Alignment", value: "99.1%" },
+                  { icon: "", label: "Fit Precision", value: "98.4%" },
+                  { icon: "", label: "Style Synthesis", value: "32 sec" },
+                  { icon: "", label: "Occasion Modes", value: "50+" },
                 ].map((stat) => (
                   <div key={stat.label} className="bg-white/5 p-3">
                     <div className="text-xl mb-1">{stat.icon}</div>

@@ -106,7 +106,7 @@ export const AIStylist = () => {
             {/* Profile Calibration */}
             <div className="bg-surface-low px-4 py-2.5 flex items-center justify-between border-b border-outline-variant">
               <div className="flex items-center gap-2 text-xs text-on-surface-variant">
-                <span className="text-sm">📐</span>
+                <span className="text-sm"></span>
                 <span className="text-charcoal">Calibrated: Size M · 172cm · Warm Autumn Palette</span>
               </div>
               <button className="label-caps text-[9px] text-burgundy hover:underline">Recalibrate</button>

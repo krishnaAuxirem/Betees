@@ -45,6 +45,17 @@ export const Navbar = () => {
     }
   };
 
+  const getSettingsPath = () => {
+    if (!user) return "/login";
+    switch (user.role) {
+      case "designer": case "tailor": return "/dashboard/designer/settings";
+      case "brand": return "/dashboard/brand/settings";
+      case "creator": return "/dashboard/creator/settings";
+      case "admin": return "/dashboard/admin/settings";
+      default: return "/dashboard/customer/settings";
+    }
+  };
+
   const isActive = (path: string) => {
     if (path === "/") return location.pathname === "/";
     return location.pathname.startsWith(path);
@@ -174,7 +185,7 @@ export const Navbar = () => {
                         <Link to={getDashboardPath()} onClick={() => setProfileOpen(false)} className="flex items-center gap-2 px-3 py-2 text-sm text-charcoal hover:bg-surface-low transition-colors">
                           <User size={14} /> Dashboard
                         </Link>
-                        <Link to="/dashboard/customer/settings" onClick={() => setProfileOpen(false)} className="flex items-center gap-2 px-3 py-2 text-sm text-charcoal hover:bg-surface-low transition-colors">
+                        <Link to={getSettingsPath()} onClick={() => setProfileOpen(false)} className="flex items-center gap-2 px-3 py-2 text-sm text-charcoal hover:bg-surface-low transition-colors">
                           <Settings size={14} /> Settings
                         </Link>
                         <button onClick={handleLogout} className="w-full flex items-center gap-2 px-3 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors">
