@@ -30,8 +30,8 @@ import { VirtualTryOn } from "@/pages/VirtualTryOn";
 import { CustomStudio } from "@/pages/CustomStudio";
 import { Trends } from "@/pages/Trends";
 import { PrivacyPolicy, Terms } from "@/pages/Legal";
-import { Blog } from "./pages/Blog";
-import { BlogDetails } from "./pages/BlogDetails";
+import { Blog } from "@/pages/blog";
+import { BlogDetails } from "@/pages/BlogDetails";
 
 // Customer Dashboard pages
 import { CustomerDashboard } from "@/pages/dashboard/customer/CustomerDashboard";
